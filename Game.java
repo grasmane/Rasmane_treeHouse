@@ -1,6 +1,7 @@
 package uitl.com;
 
 import java.text.ParseException;
+import uitl.com.IsNotLetterArgument;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -31,7 +32,7 @@ public class Game {
 	  public void setNb_max(String str) throws ParseException,IllegalArgumentException{
 		  try{
 			  int nbmax=Integer.parseInt(str);
-			  if(nbmax<=0) throw new IllegalArgumentException(String.format("ERROR! the Jar must containe at least One %s ",mItem));
+			  if(nbmax<=0) throw new IllegalArgumentException(String.format("ERROR! the Jar must containe at least One %S ",mItem));
 			  mNb_max=nbmax;
 		      }catch(NumberFormatException e){
 			  throw new ParseException("ERROR! Please Enter a Number\n",29);
@@ -67,7 +68,7 @@ public class Game {
 	
 	//guesses 	
 	public void startGame() {
-		System.out.printf("your Goal is to guess how many %s are in the Jar\nYour guess should be between 1 and %d\n\n",
+		System.out.printf("your Goal is to guess how many %S are in the Jar\nYour guess should be between 1 and %d\n\n",
 				mItem,mNb_max);
 		System.out.println("Ready?");
 		System.out.printf("Press Enter to Start Guessing)");
@@ -96,7 +97,7 @@ public class Game {
 		  long end =timeEnd();
 		  timeElapse = (end - start)/1000;
 		  
-	      System.out.printf("Congratulation! - You guessed that there are %d %s in the Jar!\n"
+	      System.out.printf("Congratulation! - You guessed that there are %d %S in the Jar!\n"
 			+ " It took you %d guess (es) to get it Right and %d Seconds to Play the Game.\n\n"
 			,nbGuess,mItem,numberOfGuess,timeElapse);
 	
